@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RIF BITE - Burgers, pizzas et tacos à Al Hoceima. Commandez en ligne !">
+  <title>RIF BITE | Fast Food à Al Hoceima</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="RIF BITE accueil">
+      <span class="brand-mark">R</span><span>RIF<span class="brand-accent">BITE</span><small>AL HOCEIMA</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a class="active" href="#accueil">Accueil</a>
+      <a href="#menu">Notre menu</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="header-cart" href="checkout.html">Panier <span id="headerCartCount">0</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="dot"></span> LE FAST-FOOD DU RIF</span>
+        <h1>Une bouchée.<br><span>Un grand plaisir.</span></h1>
+        <p>Des burgers généreux, des pizzas gourmandes et des tacos préparés avec amour à Al Hoceima.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#menu">Découvrir le menu <span>↗</span></a>
+          <a class="text-link" href="#apropos">Pourquoi RIF BITE ?</a>
+        </div>
+        <div class="hero-note"><span class="stars">★★★★★</span> <span>Le goût qui rassemble</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image" role="img" aria-label="Burger avec frites et boisson"></div>
+        <div class="floating-tag"><span>🔥</span><div><strong>Fraîchement préparé</strong><small>À chaque commande</small></div></div>
+        <div class="hero-stamp">100%<small>GOURMAND</small></div>
+      </div>
+    </section>
+
+    <section class="menu-section section-wrap" id="menu">
+      <div class="section-heading">
+        <div><span class="eyebrow">FAIT POUR VOUS</span><h2>Nos <span>favoris</span></h2></div>
+        <p>Choisissez votre envie du moment.<br>On s’occupe du reste.</p>
+      </div>
+      <div class="menu-tools">
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Rechercher une pizza, un burger..." aria-label="Rechercher un plat"></label>
+        <div class="filter-list" id="filterList">
+          <button class="filter-chip selected" data-category="Tous">Tout</button>
+          <button class="filter-chip" data-category="Burgers">Burgers</button>
+          <button class="filter-chip" data-category="Pizzas">Pizzas</button>
+          <button class="filter-chip" data-category="Tacos">Tacos</button>
+          <button class="filter-chip" data-category="Sandwiches">Sandwiches</button>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <p class="empty-state hidden" id="emptyState">Aucun plat trouvé. Essayez un autre mot.</p>
+    </section>
+
+    <section class="promo section-wrap" id="apropos">
+      <div class="promo-copy"><span class="eyebrow">BON, SIMPLE, RAPIDE</span><h2>Votre pause gourmande<br>commence ici.</h2><p>Une petite faim ou une grande envie ? Commandez en quelques clics et profitez de vos plats préférés à Al Hoceima.</p><a href="#menu" class="btn btn-light">Je choisis mon repas ↗</a></div>
+      <div class="promo-art" role="img" aria-label="Pizza fraîchement préparée"></div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <a class="brand brand-footer" href="#accueil"><span class="brand-mark">R</span><span>RIF<span class="brand-accent">BITE</span><small>AL HOCEIMA</small></span></a>
+    <p>Le goût qui rassemble. Préparé avec passion à Al Hoceima.</p>
+    <div class="footer-info"><span>📍 Al Hoceima, Maroc</span><span>📞 Ajoutez votre numéro ici</span><span>🕒 Horaires à confirmer</span></div>
+    <small class="copyright">© <span id="year"></span> RIF BITE. Tous droits réservés.</small>
+  </footer>
+
+  <a class="floating-cart" href="checkout.html" aria-label="Voir le panier">🛒 <span id="floatingCartCount">0</span></a>
+</body>
+</html>
