@@ -1,82 +1,404 @@
+
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RIF BITE - Burgers, pizzas et tacos à Al Hoceima. Commandez en ligne !">
-  <title>RIF BITE | Fast Food à Al Hoceima</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#171714">
+
+  <meta name="description"
+        content="RIF BITE - مطعم الوجبات السريعة بالحسيمة، المغرب.">
+
+  <title>RIF BITE | Fast Food Al Hoceima</title>
+
   <link rel="stylesheet" href="./css/style.css">
-  <script src="app.js" defer></script>
+
+  <!-- كل ملف يتستدعى مرة واحدة فقط -->
+  <script src="i18n.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
+
 <body>
+
+  <!-- HEADER -->
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="RIF BITE accueil">
-      <span class="brand-mark">R</span><span>RIF<span class="brand-accent">BITE</span><small>AL HOCEIMA</small></span>
+
+    <a class="brand" href="index.html"
+       aria-label="RIF BITE Home">
+      <span class="brand-icon">R.</span>
+      <span>
+        RIF<span class="orange">BITE</span>
+        <small>FAST FOOD · AL HOCEIMA</small>
+      </span>
     </a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-    <nav class="nav-links" id="navLinks">
-      <a class="active" href="#accueil">Accueil</a>
-      <a href="#menu">Notre menu</a>
-      <a href="#apropos">À propos</a>
-      <a href="#contact">Contact</a>
+
+    <nav class="main-nav">
+      <a class="active" href="index.html"
+         data-ar="الرئيسية"
+         data-fr="Accueil"
+         data-en="Home"
+         data-es="Inicio"
+         data-de="Startseite"
+         data-nl="Home">الرئيسية</a>
+
+      <a href="menu.html"
+         data-ar="القائمة"
+         data-fr="Menu"
+         data-en="Menu"
+         data-es="Menú"
+         data-de="Speisekarte"
+         data-nl="Menu">القائمة</a>
+
+      <a href="cart.html">
+        <span data-ar="السلة"
+              data-fr="Panier"
+              data-en="Cart"
+              data-es="Carrito"
+              data-de="Warenkorb"
+              data-nl="Winkelwagen">السلة</span>
+        <b class="cart-count">0</b>
+      </a>
+
+      <a href="contact.html"
+         data-ar="اتصل بنا"
+         data-fr="Contact"
+         data-en="Contact"
+         data-es="Contacto"
+         data-de="Kontakt"
+         data-nl="Contact">اتصل بنا</a>
     </nav>
-    <a class="header-cart" href="checkout.html">Panier <span id="headerCartCount">0</span></a>
+
+    <select id="languageSwitcher"
+            class="language-switcher"
+            aria-label="Choose language">
+
+      <option value="ar">🇲🇦 العربية</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="en">🇬🇧 English</option>
+      <option value="es">🇪🇸 Español</option>
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="nl">🇳🇱 Nederlands</option>
+    </select>
+
   </header>
 
   <main>
-    <section class="hero" id="accueil">
-      <div class="hero-copy">
-        <span class="eyebrow"><span class="dot"></span> LE FAST-FOOD DU RIF</span>
-        <h1>Une bouchée.<br><span>Un grand plaisir.</span></h1>
-        <p>Des burgers généreux, des pizzas gourmandes et des tacos préparés avec amour à Al Hoceima.</p>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="location-pill">
+          <span class="location-dot"></span>
+          <span data-ar="الحسيمة، المغرب"
+                data-fr="AL HOCEIMA, MAROC"
+                data-en="AL HOCEIMA, MOROCCO"
+                data-es="ALHUCEMAS, MARRUECOS"
+                data-de="AL HOCEIMA, MAROKKO"
+                data-nl="AL HOCEIMA, MAROKKO">
+            الحسيمة، المغرب
+          </span>
+        </div>
+
+        <p class="eyebrow"
+           data-ar="المذاق اللي كيجمعنا"
+           data-fr="Le goût qui nous rassemble"
+           data-en="The taste that brings us together"
+           data-es="El sabor que nos une"
+           data-de="Der Geschmack, der uns verbindet"
+           data-nl="De smaak die ons verbindt">
+          المذاق اللي كيجمعنا
+        </p>
+
+        <h1>
+          <span data-ar="الجوع عندو حل."
+                data-fr="La faim a sa solution."
+                data-en="Hunger has a solution."
+                data-es="El hambre tiene solución."
+                data-de="Hunger hat eine Lösung."
+                data-nl="Honger heeft een oplossing.">
+            الجوع عندو حل.
+          </span>
+          <br>
+          <span class="orange">RIF BITE!</span>
+        </h1>
+
+        <p class="hero-description"
+           data-ar="برغر، بيتزا ووجبات لذيذة، واجدين حتى يوصلك الطلب ديالك فالحسيمة."
+           data-fr="Burgers, pizzas et plats délicieux, prêts à être livrés à Al Hoceima."
+           data-en="Delicious burgers, pizzas and meals, ready for delivery in Al Hoceima."
+           data-es="Hamburguesas, pizzas y platos deliciosos, listos para entregar en Al Hoceima."
+           data-de="Leckere Burger, Pizzen und Gerichte, bereit zur Lieferung in Al Hoceima."
+           data-nl="Heerlijke burgers, pizza's en maaltijden, klaar voor bezorging in Al Hoceima.">
+          برغر، بيتزا ووجبات لذيذة، واجدين حتى يوصلك الطلب ديالك فالحسيمة.
+        </p>
+
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#menu">Découvrir le menu <span>↗</span></a>
-          <a class="text-link" href="#apropos">Pourquoi RIF BITE ?</a>
+
+          <a href="menu.html" class="btn btn-primary">
+            <span data-ar="طلب وجبتك الآن"
+                  data-fr="Commander maintenant"
+                  data-en="Order now"
+                  data-es="Pedir ahora"
+                  data-de="Jetzt bestellen"
+                  data-nl="Bestel nu">
+              طلب وجبتك الآن
+            </span>
+            <span class="btn-arrow">↙</span>
+          </a>
+
+          <a href="contact.html" class="btn btn-outline"
+             data-ar="اكتشف المطعم"
+             data-fr="Découvrir le restaurant"
+             data-en="Discover the restaurant"
+             data-es="Descubre el restaurante"
+             data-de="Restaurant entdecken"
+             data-nl="Ontdek het restaurant">
+            اكتشف المطعم
+          </a>
+
         </div>
-        <div class="hero-note"><span class="stars">★★★★★</span> <span>Le goût qui rassemble</span></div>
+
+        <div class="hero-features">
+
+          <div>
+            <span>✦</span>
+            <p>
+              <span data-ar="مذاق مميز"
+                    data-fr="Goût unique"
+                    data-en="Great taste"
+                    data-es="Sabor único"
+                    data-de="Besonderer Geschmack"
+                    data-nl="Heerlijke smaak">مذاق مميز</span>
+              <small>Fresh taste</small>
+            </p>
+          </div>
+
+          <div>
+            <span>⌁</span>
+            <p>
+              <span data-ar="طلب سهل"
+                    data-fr="Commande facile"
+                    data-en="Easy ordering"
+                    data-es="Pedido fácil"
+                    data-de="Einfach bestellen"
+                    data-nl="Eenvoudig bestellen">طلب سهل</span>
+              <small>Easy ordering</small>
+            </p>
+          </div>
+
+          <div>
+            <span>⌖</span>
+            <p>
+              <span data-ar="في الحسيمة"
+                    data-fr="À Al Hoceima"
+                    data-en="In Al Hoceima"
+                    data-es="En Alhucemas"
+                    data-de="In Al Hoceima"
+                    data-nl="In Al Hoceima">في الحسيمة</span>
+              <small>Al Hoceima</small>
+            </p>
+          </div>
+
+        </div>
       </div>
+
+      <!-- HERO IMAGE -->
       <div class="hero-visual">
-        <div class="hero-image" role="img" aria-label="Burger avec frites et boisson"></div>
-        <div class="floating-tag"><span>🔥</span><div><strong>Fraîchement préparé</strong><small>À chaque commande</small></div></div>
-        <div class="hero-stamp">100%<small>GOURMAND</small></div>
-      </div>
-    </section>
 
-    <section class="menu-section section-wrap" id="menu">
-      <div class="section-heading">
-        <div><span class="eyebrow">FAIT POUR VOUS</span><h2>Nos <span>favoris</span></h2></div>
-        <p>Choisissez votre envie du moment.<br>On s’occupe du reste.</p>
-      </div>
-      <div class="menu-tools">
-        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Rechercher une pizza, un burger..." aria-label="Rechercher un plat"></label>
-        <div class="filter-list" id="filterList">
-          <button class="filter-chip selected" data-category="Tous">Tout</button>
-          <button class="filter-chip" data-category="Burgers">Burgers</button>
-          <button class="filter-chip" data-category="Pizzas">Pizzas</button>
-          <button class="filter-chip" data-category="Tacos">Tacos</button>
-          <button class="filter-chip" data-category="Sandwiches">Sandwiches</button>
+        <div class="hero-glow"></div>
+
+        <div class="hero-image-wrap">
+          <img
+            class="hero-image"
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=85"
+            alt="Double cheeseburger with fresh ingredients"
+            data-ar-alt="برغر بالجبن ومكونات طازجة"
+            data-fr-alt="Burger au fromage et ingrédients frais"
+            data-en-alt="Double cheeseburger with fresh ingredients"
+            data-es-alt="Hamburguesa con queso e ingredientes frescos"
+            data-de-alt="Doppelter Cheeseburger mit frischen Zutaten"
+            data-nl-alt="Dubbele cheeseburger met verse ingrediënten">
         </div>
+
+        <div class="hero-sticker">
+          <span>100%</span>
+          <small>GOOD<br> TASTE</small>
+        </div>
+
+        <div class="hero-caption">
+          <span class="caption-icon">🍔</span>
+
+          <div>
+            <strong>RIF BITE SPECIAL</strong>
+            <small>Made for your cravings</small>
+          </div>
+
+          <span class="caption-price">45 DH</span>
+        </div>
+
+        <span class="decor decor-one">✳</span>
+        <span class="decor decor-two">✦</span>
+
       </div>
-      <div class="product-grid" id="productGrid" aria-live="polite"></div>
-      <p class="empty-state hidden" id="emptyState">Aucun plat trouvé. Essayez un autre mot.</p>
     </section>
 
-    <section class="promo section-wrap" id="apropos">
-      <div class="promo-copy"><span class="eyebrow">BON, SIMPLE, RAPIDE</span><h2>Votre pause gourmande<br>commence ici.</h2><p>Une petite faim ou une grande envie ? Commandez en quelques clics et profitez de vos plats préférés à Al Hoceima.</p><a href="#menu" class="btn btn-light">Je choisis mon repas ↗</a></div>
-      <div class="promo-art" role="img" aria-label="Pizza fraîchement préparée"></div>
+    <!-- TRUST STRIP -->
+    <section class="trust-strip">
+
+      <div>
+        <span>📍</span>
+        <span data-ar="الحسيمة، المغرب"
+              data-fr="Al Hoceima, Maroc"
+              data-en="Al Hoceima, Morocco"
+              data-es="Alhucemas, Marruecos"
+              data-de="Al Hoceima, Marokko"
+              data-nl="Al Hoceima, Marokko">الحسيمة، المغرب</span>
+      </div>
+
+      <div>
+        <span>🍟</span>
+        <span data-ar="وجبات متنوعة"
+              data-fr="Plats variés"
+              data-en="Variety of meals"
+              data-es="Comidas variadas"
+              data-de="Vielfältige Gerichte"
+              data-nl="Diverse maaltijden">وجبات متنوعة</span>
+      </div>
+
+      <div>
+        <span>🛵</span>
+        <span data-ar="طلبات أونلاين"
+              data-fr="Commandes en ligne"
+              data-en="Online ordering"
+              data-es="Pedidos en línea"
+              data-de="Online bestellen"
+              data-nl="Online bestellen">طلبات أونلاين</span>
+      </div>
+
+      <div>
+        <span>♡</span>
+        <span data-ar="مذاق كيعجبك"
+              data-fr="Un goût que vous aimez"
+              data-en="Taste you'll love"
+              data-es="Un sabor que te encantará"
+              data-de="Ein Geschmack zum Verlieben"
+              data-nl="Een smaak om van te houden">مذاق كيعجبك</span>
+      </div>
+
     </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="section section-menu">
+
+      <div class="section-heading">
+        <div>
+
+          <p class="eyebrow">OUR SELECTION</p>
+
+          <h2 data-ar="الأكثر طلباً"
+              data-fr="Les plus populaires"
+              data-en="Most popular"
+              data-es="Los más populares"
+              data-de="Am beliebtesten"
+              data-nl="Populairste gerechten">الأكثر طلباً</h2>
+
+          <p data-ar="اختار الوجبة اللي كتناسب ذوقك."
+             data-fr="Choisissez le plat qui vous plaît."
+             data-en="Choose the meal that suits your taste."
+             data-es="Elige el plato que más te guste."
+             data-de="Wähle ein Gericht nach deinem Geschmack."
+             data-nl="Kies het gerecht dat bij je smaak past.">
+            اختار الوجبة اللي كتناسب ذوقك.
+          </p>
+
+        </div>
+
+        <a href="menu.html" class="text-link"
+           data-ar="شوف القائمة كاملة ↗"
+           data-fr="Voir tout le menu ↗"
+           data-en="View full menu ↗"
+           data-es="Ver todo el menú ↗"
+           data-de="Gesamte Speisekarte ↗"
+           data-nl="Bekijk het volledige menu ↗">
+          شوف القائمة كاملة ↗
+        </a>
+      </div>
+
+      <!-- Products are generated by script.js -->
+      <div id="featuredProducts" class="products-grid"></div>
+
+    </section>
+
+    <!-- PROMOTION -->
+    <section class="wide-cta">
+
+      <div>
+        <p class="eyebrow">YOUR NEXT FAVOURITE MEAL</p>
+
+        <h2 data-ar="واش واجد تجرب المذاق؟"
+            data-fr="Prêt à découvrir nos saveurs ?"
+            data-en="Ready to taste something special?"
+            data-es="¿Listo para probar nuestros sabores?"
+            data-de="Bereit, unsere Spezialitäten zu probieren?"
+            data-nl="Klaar om onze smaken te ontdekken?">
+          واش واجد تجرب المذاق؟
+        </h2>
+
+        <p data-ar="اختار وجبتك ووجد الطلب ديالك أونلاين."
+           data-fr="Choisissez votre plat et commandez en ligne."
+           data-en="Choose your meal and place your order online."
+           data-es="Elige tu plato y haz tu pedido en línea."
+           data-de="Wähle dein Gericht und bestelle online."
+           data-nl="Kies je maaltijd en bestel online.">
+          اختار وجبتك ووجد الطلب ديالك أونلاين.
+        </p>
+      </div>
+
+      <a href="menu.html" class="btn btn-light"
+         data-ar="اكتشف القائمة ↗"
+         data-fr="Découvrir le menu ↗"
+         data-en="Explore the menu ↗"
+         data-es="Descubrir el menú ↗"
+         data-de="Speisekarte entdecken ↗"
+         data-nl="Ontdek het menu ↗">
+        اكتشف القائمة ↗
+      </a>
+
+    </section>
+
   </main>
 
-  <footer class="footer" id="contact">
-    <a class="brand brand-footer" href="#accueil"><span class="brand-mark">R</span><span>RIF<span class="brand-accent">BITE</span><small>AL HOCEIMA</small></span></a>
-    <p>Le goût qui rassemble. Préparé avec passion à Al Hoceima.</p>
-    <div class="footer-info"><span>📍 Al Hoceima, Maroc</span><span>📞 Ajoutez votre numéro ici</span><span>🕒 Horaires à confirmer</span></div>
-    <small class="copyright">© <span id="year"></span> RIF BITE. Tous droits réservés.</small>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <a class="brand footer-brand" href="index.html">
+      <span class="brand-icon">R.</span>
+      <span>
+        RIF<span class="orange">BITE</span>
+        <small>FAST FOOD · AL HOCEIMA</small>
+      </span>
+    </a>
+
+    <p data-ar="© 2026 RIF BITE — الحسيمة، المغرب"
+       data-fr="© 2026 RIF BITE — Al Hoceima, Maroc"
+       data-en="© 2026 RIF BITE — Al Hoceima, Morocco"
+       data-es="© 2026 RIF BITE — Alhucemas, Marruecos"
+       data-de="© 2026 RIF BITE — Al Hoceima, Marokko"
+       data-nl="© 2026 RIF BITE — Al Hoceima, Marokko">
+      © 2026 RIF BITE — الحسيمة، المغرب
+    </p>
+
+    <a href="contact.html"
+       data-ar="اتصل بنا"
+       data-fr="Contact"
+       data-en="Contact"
+       data-es="Contacto"
+       data-de="Kontakt"
+       data-nl="Contact">اتصل بنا</a>
+
   </footer>
 
-  <a class="floating-cart" href="checkout.html" aria-label="Voir le panier">🛒 <span id="floatingCartCount">0</span></a>
 </body>
 </html>

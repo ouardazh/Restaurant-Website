@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171714">
+  <meta name="description" content="اكتشف قائمة RIF BITE للوجبات السريعة في الحسيمة.">
+  <title>Menu | RIF BITE</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="i18n.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+
+    <a class="brand" href="index.html" aria-label="RIF BITE Home">
+      <span class="brand-icon">R.</span>
+      <span>RIF<span class="orange">BITE</span>
+        <small>FAST FOOD · AL HOCEIMA</small>
+      </span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="index.html"
+         data-ar="الرئيسية"
+         data-fr="Accueil"
+         data-en="Home"
+         data-es="Inicio"
+         data-de="Startseite"
+         data-nl="Home">الرئيسية</a>
+
+      <a class="active" href="menu.html"
+         data-ar="القائمة"
+         data-fr="Menu"
+         data-en="Menu"
+         data-es="Menú"
+         data-de="Speisekarte"
+         data-nl="Menu">القائمة</a>
+
+      <a href="cart.html">
+        <span data-ar="السلة"
+              data-fr="Panier"
+              data-en="Cart"
+              data-es="Carrito"
+              data-de="Warenkorb"
+              data-nl="Winkelwagen">السلة</span>
+        <b class="cart-count">0</b>
+      </a>
+
+      <a href="contact.html"
+         data-ar="اتصل بنا"
+         data-fr="Contact"
+         data-en="Contact"
+         data-es="Contacto"
+         data-de="Kontakt"
+         data-nl="Contact">اتصل بنا</a>
+    </nav>
+
+    <select id="languageSwitcher" class="language-switcher"
+            aria-label="Choose language">
+      <option value="ar">🇲🇦 العربية</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="en">🇬🇧 English</option>
+      <option value="es">🇪🇸 Español</option>
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="nl">🇳🇱 Nederlands</option>
+    </select>
+
+  </header>
+
+  <main class="page-main">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+
+      <p class="eyebrow">GOOD FOOD. GOOD MOOD.</p>
+
+      <h1 data-ar="شنو غادي تشهي اليوم؟"
+          data-fr="Qu'est-ce qui vous ferait plaisir aujourd'hui ?"
+          data-en="What are you craving today?"
+          data-es="¿Qué te apetece hoy?"
+          data-de="Worauf hast du heute Lust?"
+          data-nl="Waar heb je vandaag zin in?">
+        شنو غادي تشهي اليوم؟
+      </h1>
+
+      <p data-ar="اختار من الوجبات ديالنا وزيدها للسلة."
+         data-fr="Choisissez vos plats préférés et ajoutez-les au panier."
+         data-en="Choose your favorite meals and add them to your cart."
+         data-es="Elige tus platos favoritos y añádelos al carrito."
+         data-de="Wähle deine Lieblingsgerichte und lege sie in den Warenkorb."
+         data-nl="Kies je favoriete gerechten en voeg ze toe aan je winkelwagen.">
+        اختار من الوجبات ديالنا وزيدها للسلة.
+      </p>
+
+      <span class="page-location"
+            data-ar="⌖ الحسيمة، المغرب"
+            data-fr="⌖ AL HOCEIMA, MAROC"
+            data-en="⌖ AL HOCEIMA, MOROCCO"
+            data-es="⌖ ALHUCEMAS, MARRUECOS"
+            data-de="⌖ AL HOCEIMA, MAROKKO"
+            data-nl="⌖ AL HOCEIMA, MAROKKO">
+        ⌖ الحسيمة، المغرب
+      </span>
+
+    </section>
+
+    <!-- MENU -->
+    <section class="menu-section">
+
+      <div class="menu-toolbar">
+
+        <label class="search-box">
+          <span>⌕</span>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="قلب على وجبة..."
+            data-ar-placeholder="قلب على وجبة..."
+            data-fr-placeholder="Rechercher un plat..."
+            data-en-placeholder="Search for a meal..."
+            data-es-placeholder="Buscar un plato..."
+            data-de-placeholder="Gericht suchen..."
+            data-nl-placeholder="Zoek een gerecht..."
+            aria-label="Search meals">
+        </label>
+
+        <select id="categoryFilter" class="category-select"
+                aria-label="Category">
+
+          <option value="all"
+                  data-ar="جميع الوجبات"
+                  data-fr="Tous les plats"
+                  data-en="All meals"
+                  data-es="Todos los platos"
+                  data-de="Alle Gerichte"
+                  data-nl="Alle gerechten">جميع الوجبات</option>
+
+          <option value="burger"
+                  data-ar="برغر"
+                  data-fr="Burgers"
+                  data-en="Burgers"
+                  data-es="Hamburguesas"
+                  data-de="Burger"
+                  data-nl="Burgers">برغر</option>
+
+          <option value="pizza"
+                  data-ar="بيتزا"
+                  data-fr="Pizzas"
+                  data-en="Pizza"
+                  data-es="Pizzas"
+                  data-de="Pizza"
+                  data-nl="Pizza">بيتزا</option>
+
+          <option value="tacos"
+                  data-ar="طاكوس"
+                  data-fr="Tacos"
+                  data-en="Tacos"
+                  data-es="Tacos"
+                  data-de="Tacos"
+                  data-nl="Taco's">طاكوس</option>
+
+          <option value="sandwich"
+                  data-ar="ساندويتش"
+                  data-fr="Sandwichs"
+                  data-en="Sandwiches"
+                  data-es="Sándwiches"
+                  data-de="Sandwiches"
+                  data-nl="Broodjes">ساندويتش</option>
+
+        </select>
+      </div>
+
+      <!-- Products are generated by script.js -->
+      <div id="menuProducts" class="products-grid"></div>
+
+      <p id="emptyMessage" class="empty-message" hidden
+         data-ar="ما لقينا حتى وجبة بهاد الاسم."
+         data-fr="Aucun plat trouvé avec ce nom."
+         data-en="No meals found matching your search."
+         data-es="No se encontraron platos con ese nombre."
+         data-de="Keine passenden Gerichte gefunden."
+         data-nl="Geen gerechten gevonden met deze naam.">
+        ما لقينا حتى وجبة بهاد الاسم.
+      </p>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <a class="brand footer-brand" href="index.html">
+      <span class="brand-icon">R.</span>
+      <span>RIF<span class="orange">BITE</span>
+        <small>FAST FOOD · AL HOCEIMA</small>
+      </span>
+    </a>
+
+    <p data-ar="© 2026 RIF BITE — الحسيمة، المغرب"
+       data-fr="© 2026 RIF BITE — Al Hoceima, Maroc"
+       data-en="© 2026 RIF BITE — Al Hoceima, Morocco"
+       data-es="© 2026 RIF BITE — Alhucemas, Marruecos"
+       data-de="© 2026 RIF BITE — Al Hoceima, Marokko"
+       data-nl="© 2026 RIF BITE — Al Hoceima, Marokko">
+      © 2026 RIF BITE — الحسيمة، المغرب
+    </p>
+
+    <a href="contact.html"
+       data-ar="اتصل بنا"
+       data-fr="Contact"
+       data-en="Contact"
+       data-es="Contacto"
+       data-de="Kontakt"
+       data-nl="Contact">اتصل بنا</a>
+
+  </footer>
+
+</body>
+</html>

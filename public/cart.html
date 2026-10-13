@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cart | RIF BITE</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <script src="i18n.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+
+    <a class="brand" href="index.html">
+      <span class="brand-icon">R.</span>
+      <span>
+        RIF<span class="orange">BITE</span>
+        <small>FAST FOOD · AL HOCEIMA</small>
+      </span>
+    </a>
+
+    <nav class="main-nav">
+
+      <a href="index.html"
+         data-ar="الرئيسية"
+         data-fr="Accueil"
+         data-en="Home"
+         data-es="Inicio"
+         data-de="Startseite"
+         data-nl="Home">
+        الرئيسية
+      </a>
+
+      <a href="menu.html"
+         data-ar="القائمة"
+         data-fr="Menu"
+         data-en="Menu"
+         data-es="Menú"
+         data-de="Speisekarte"
+         data-nl="Menu">
+        القائمة
+      </a>
+
+      <a class="active" href="cart.html">
+        <span
+          data-ar="السلة"
+          data-fr="Panier"
+          data-en="Cart"
+          data-es="Carrito"
+          data-de="Warenkorb"
+          data-nl="Winkelwagen">
+          السلة
+        </span>
+        <b class="cart-count">0</b>
+      </a>
+
+      <a href="contact.html"
+         data-ar="اتصل بنا"
+         data-fr="Contact"
+         data-en="Contact"
+         data-es="Contacto"
+         data-de="Kontakt"
+         data-nl="Contact">
+        اتصل بنا
+      </a>
+
+    </nav>
+
+    <select id="languageSwitcher"
+            class="language-switcher"
+            aria-label="Choose language">
+      <option value="ar">🇲🇦 AR</option>
+      <option value="fr">🇫🇷 FR</option>
+      <option value="en">🇬🇧 EN</option>
+      <option value="es">🇪🇸 ES</option>
+      <option value="de">🇩🇪 DE</option>
+      <option value="nl">🇳🇱 NL</option>
+    </select>
+
+  </header>
+
+
+  <!-- MAIN -->
+  <main class="page-main">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero compact-hero">
+
+      <p class="eyebrow"
+         data-ar="طلبك"
+         data-fr="VOTRE COMMANDE"
+         data-en="YOUR ORDER"
+         data-es="TU PEDIDO"
+         data-de="DEINE BESTELLUNG"
+         data-nl="JOUW BESTELLING">
+        YOUR ORDER
+      </p>
+
+      <h1
+        data-ar="السلة ديالك"
+        data-fr="Votre panier"
+        data-en="Your cart"
+        data-es="Tu carrito"
+        data-de="Dein Warenkorb"
+        data-nl="Jouw winkelwagen">
+        السلة ديالك
+      </h1>
+
+      <p
+        data-ar="راجع الوجبات قبل ما تأكد الطلب."
+        data-fr="Vérifiez vos plats avant de confirmer la commande."
+        data-en="Review your meals before confirming your order."
+        data-es="Revisa tus platos antes de confirmar el pedido."
+        data-de="Überprüfe deine Gerichte, bevor du bestellst."
+        data-nl="Controleer je maaltijden voordat je de bestelling bevestigt.">
+        راجع الوجبات قبل ما تأكد الطلب.
+      </p>
+
+    </section>
+
+
+    <!-- CHECKOUT LAYOUT -->
+    <section class="checkout-layout">
+
+      <!-- CART ITEMS -->
+      <div class="cart-panel">
+
+        <!-- script.js will render cart items here -->
+        <div id="cartItems" class="cart-items"></div>
+
+        <div id="emptyCart" class="empty-state" hidden>
+
+          <span class="empty-icon">🛒</span>
+
+          <h2
+            data-ar="السلة ديالك مازال خاوية!"
+            data-fr="Votre panier est encore vide !"
+            data-en="Your cart is still empty!"
+            data-es="¡Tu carrito está vacío!"
+            data-de="Dein Warenkorb ist noch leer!"
+            data-nl="Je winkelwagen is nog leeg!">
+            السلة ديالك مازال خاوية!
+          </h2>
+
+          <p
+            data-ar="زيد شي وجبة بنينة باش تكمل الطلب."
+            data-fr="Ajoutez un délicieux plat pour continuer."
+            data-en="Add something delicious to continue."
+            data-es="Añade algo delicioso para continuar."
+            data-de="Füge etwas Leckeres hinzu, um fortzufahren."
+            data-nl="Voeg iets lekkers toe om verder te gaan.">
+            زيد شي وجبة بنينة باش تكمل الطلب.
+          </p>
+
+          <a href="menu.html"
+             class="btn btn-primary"
+             data-ar="تسوق دابا"
+             data-fr="Voir le menu"
+             data-en="Browse menu"
+             data-es="Ver menú"
+             data-de="Menü ansehen"
+             data-nl="Bekijk menu">
+            تسوق دابا
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- ORDER SUMMARY -->
+      <aside class="summary-card">
+
+        <p class="eyebrow"
+           data-ar="تفاصيل الطلب"
+           data-fr="DÉTAILS DE LA COMMANDE"
+           data-en="ORDER DETAILS"
+           data-es="DETALLES DEL PEDIDO"
+           data-de="BESTELLDETAILS"
+           data-nl="BESTELLINGSDETAILS">
+          ORDER DETAILS
+        </p>
+
+        <h2
+          data-ar="ملخص الطلب"
+          data-fr="Récapitulatif"
+          data-en="Order summary"
+          data-es="Resumen del pedido"
+          data-de="Bestellübersicht"
+          data-nl="Bestellingsoverzicht">
+          ملخص الطلب
+        </h2>
+
+        <div class="summary-row">
+          <span
+            data-ar="مجموع الوجبات"
+            data-fr="Sous-total"
+            data-en="Subtotal"
+            data-es="Subtotal"
+            data-de="Zwischensumme"
+            data-nl="Subtotaal">
+            مجموع الوجبات
+          </span>
+          <strong id="subtotal">0 DH</strong>
+        </div>
+
+        <div class="summary-row">
+          <span
+            data-ar="التوصيل"
+            data-fr="Livraison"
+            data-en="Delivery"
+            data-es="Entrega"
+            data-de="Lieferung"
+            data-nl="Bezorging">
+            التوصيل
+          </span>
+          <strong id="delivery">15 DH</strong>
+        </div>
+
+        <div class="summary-row summary-total">
+          <span
+            data-ar="المجموع النهائي"
+            data-fr="Total à payer"
+            data-en="Grand total"
+            data-es="Total"
+            data-de="Gesamtsumme"
+            data-nl="Totaal">
+            المجموع النهائي
+          </span>
+          <strong id="total">0 DH</strong>
+        </div>
+
+
+        <!-- CUSTOMER FORM -->
+        <form id="checkoutForm" class="checkout-form">
+
+          <label for="customerName"
+                 data-ar="الاسم الكامل"
+                 data-fr="Nom complet"
+                 data-en="Full name"
+                 data-es="Nombre completo"
+                 data-de="Vollständiger Name"
+                 data-nl="Volledige naam">
+            الاسم الكامل
+          </label>
+
+          <input
+            id="customerName"
+            name="customerName"
+            type="text"
+            autocomplete="name"
+            required
+            data-ar-placeholder="دخل الاسم ديالك"
+            data-fr-placeholder="Entrez votre nom"
+            data-en-placeholder="Enter your name"
+            data-es-placeholder="Introduce tu nombre"
+            data-de-placeholder="Gib deinen Namen ein"
+            data-nl-placeholder="Vul je naam in"
+            placeholder="دخل الاسم ديالك">
+
+
+          <label for="customerPhone"
+                 data-ar="رقم الهاتف"
+                 data-fr="Numéro de téléphone"
+                 data-en="Phone number"
+                 data-es="Número de teléfono"
+                 data-de="Telefonnummer"
+                 data-nl="Telefoonnummer">
+            رقم الهاتف
+          </label>
+
+          <input
+            id="customerPhone"
+            name="customerPhone"
+            type="tel"
+            autocomplete="tel"
+            required
+            pattern="(\+212|0)[0-9]{9}"
+            title="Enter a valid Moroccan phone number"
+            data-ar-placeholder="06XXXXXXXX"
+            data-fr-placeholder="06XXXXXXXX"
+            data-en-placeholder="06XXXXXXXX"
+            data-es-placeholder="06XXXXXXXX"
+            data-de-placeholder="06XXXXXXXX"
+            data-nl-placeholder="06XXXXXXXX"
+            placeholder="06XXXXXXXX">
+
+
+          <label for="customerAddress"
+                 data-ar="عنوان التوصيل بالحسيمة"
+                 data-fr="Adresse de livraison à Al Hoceïma"
+                 data-en="Delivery address in Al Hoceima"
+                 data-es="Dirección de entrega en Alhucemas"
+                 data-de="Lieferadresse in Al Hoceima"
+                 data-nl="Bezorgadres in Al Hoceima">
+            عنوان التوصيل بالحسيمة
+          </label>
+
+          <textarea
+            id="customerAddress"
+            name="customerAddress"
+            autocomplete="street-address"
+            required
+            data-ar-placeholder="الحي، الزنقة، رقم المنزل..."
+            data-fr-placeholder="Quartier, rue, numéro..."
+            data-en-placeholder="Neighborhood, street, house number..."
+            data-es-placeholder="Barrio, calle, número..."
+            data-de-placeholder="Viertel, Straße, Hausnummer..."
+            data-nl-placeholder="Wijk, straat, huisnummer..."
+            placeholder="الحي، الزنقة، رقم المنزل..."></textarea>
+
+
+          <label for="paymentMethod"
+                 data-ar="طريقة الأداء"
+                 data-fr="Mode de paiement"
+                 data-en="Payment method"
+                 data-es="Método de pago"
+                 data-de="Zahlungsmethode"
+                 data-nl="Betaalmethode">
+            طريقة الأداء
+          </label>
+
+          <select id="paymentMethod" name="paymentMethod">
+
+            <option
+              value="cash"
+              data-ar="الدفع نقداً عند الاستلام"
+              data-fr="Paiement en espèces à la livraison"
+              data-en="Cash on delivery"
+              data-es="Pago en efectivo a la entrega"
+              data-de="Barzahlung bei Lieferung"
+              data-nl="Contant betalen bij levering">
+              الدفع نقداً عند الاستلام
+            </option>
+
+          </select>
+
+
+          <button
+            type="submit"
+            class="btn btn-primary full-btn"
+            data-ar="أكد الطلب عبر WhatsApp"
+            data-fr="Confirmer via WhatsApp"
+            data-en="Confirm order via WhatsApp"
+            data-es="Confirmar pedido por WhatsApp"
+            data-de="Bestellung über WhatsApp bestätigen"
+            data-nl="Bestelling bevestigen via WhatsApp">
+            أكد الطلب عبر WhatsApp
+          </button>
+
+          <p class="form-note"
+             data-ar="المطعم خاصو يأكد التوفر والثمن والتوصيل."
+             data-fr="Le restaurant doit confirmer la disponibilité, le prix et la livraison."
+             data-en="The restaurant must confirm availability, pricing, and delivery."
+             data-es="El restaurante debe confirmar la disponibilidad, el precio y la entrega."
+             data-de="Das Restaurant muss Verfügbarkeit, Preis und Lieferung bestätigen."
+             data-nl="Het restaurant moet beschikbaarheid, prijs en bezorging bevestigen.">
+            المطعم خاصو يأكد التوفر والثمن والتوصيل.
+          </p>
+
+        </form>
+
+      </aside>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <a class="brand footer-brand" href="index.html">
+      <span class="brand-icon">R.</span>
+      <span>
+        RIF<span class="orange">BITE</span>
+        <small>FAST FOOD · AL HOCEIMA</small>
+      </span>
+    </a>
+
+    <p
+      data-ar="© 2026 RIF BITE — الحسيمة، المغرب"
+      data-fr="© 2026 RIF BITE — Al Hoceïma, Maroc"
+      data-en="© 2026 RIF BITE — Al Hoceima, Morocco"
+      data-es="© 2026 RIF BITE — Alhucemas, Marruecos"
+      data-de="© 2026 RIF BITE — Al Hoceima, Marokko"
+      data-nl="© 2026 RIF BITE — Al Hoceima, Marokko">
+      © 2026 RIF BITE — الحسيمة، المغرب
+    </p>
+
+    <a href="contact.html"
+       data-ar="اتصل بنا"
+       data-fr="Contact"
+       data-en="Contact"
+       data-es="Contacto"
+       data-de="Kontakt"
+       data-nl="Contact">
+      اتصل بنا
+    </a>
+
+  </footer>
+
+</body>
+</html>
